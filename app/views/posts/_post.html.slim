@@ -1,0 +1,7 @@
+li class="posts post-#{post.id}"
+  .row
+    .col.s12.m6
+      .card
+        .card-content
+          span.card-title = post.user.username
+          p = post.content

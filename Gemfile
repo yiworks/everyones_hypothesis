@@ -24,6 +24,11 @@ gem 'slim-rails'
 gem 'devise'
 gem 'omniauth-twitter'
 
+# Front
+gem 'jquery-rails'
+gem 'materialize-sass'
+gem 'material_icons'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

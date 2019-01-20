@@ -8,19 +8,37 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
   body
     header
       nav
-        - if user_signed_in?
-          / strong
-          /   = link_to current_user.username, hypotheses_show_path
-          = link_to 'プロフィール変更', edit_user_registration_path
-          = link_to 'ログアウト', destroy_user_session_path, method: :delete
-        - else
-          = link_to 'サインアップ', new_user_registration_path
-          = link_to 'ログイン', new_user_session_path
-    p.notice
-      = notice
-    p.alert
-      = alert
-    == yield
+        .nav-wrapper.container
+          = link_to 'みんなの○○説', root_path, id: 'logo-container', class: 'brand-logo'
+          ul.right.hide-on-med-and-down
+            - if user_signed_in?
+              / strong
+              /   = link_to current_user.username, hypotheses_show_path
+              li = link_to 'プロフィール変更', edit_user_registration_path
+              li = link_to 'ログアウト', destroy_user_session_path, method: :delete
+            - else
+              li = link_to 'サインアップ', new_user_registration_path
+              li = link_to 'ログイン', new_user_session_path
+          ul#nav-mobile.sidenav
+            - if user_signed_in?
+              / strong
+              /   = link_to current_user.username, hypotheses_show_path
+              li = link_to 'プロフィール変更', edit_user_registration_path
+              li = link_to 'ログアウト', destroy_user_session_path, method: :delete
+            - else
+              li = link_to 'サインアップ', new_user_registration_path
+              li = link_to 'ログイン', new_user_session_path
+          a.sidenav-trigger href='#' data-target='nav-mobile'
+            i.material-icons menu
+
+    .container
+      p.notice
+        = notice
+      p.alert
+        = alert
+      == yield

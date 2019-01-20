@@ -1,0 +1,5 @@
+@import 'material_icons';
+@import 'materialize/components/color-variables';
+$primary-color: color("light-blue", "lighten-2") !default;
+@import 'materialize';
+@import 'posts';
