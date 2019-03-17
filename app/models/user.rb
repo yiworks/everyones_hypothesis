@@ -3,4 +3,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          # :omniauthable, omniauth_providers: [:twitter]
   has_many :posts
+  has_many :likes
 end
