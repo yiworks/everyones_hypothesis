@@ -5,3 +5,4 @@ li class="posts post-#{post.id}"
         .card-content
           span.card-title = post.user.username
           p = post.content
+          = react_component("Like")
