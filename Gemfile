@@ -28,6 +28,8 @@ gem 'omniauth-twitter'
 gem 'jquery-rails'
 gem 'materialize-sass'
 gem 'material_icons'
+gem 'react-rails'
+gem 'webpacker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
